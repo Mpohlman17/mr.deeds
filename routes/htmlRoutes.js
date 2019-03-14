@@ -34,17 +34,21 @@ module.exports = function(app) {
 
   // loads search page
   app.get("/user/:user.id", function(req, res) {
-    res.sendFile(
-      path.join(
-        __dirname,
-        "../react-passport-example/client/src/components/HomePage.jsx"
-      )
-    );
+    res.sendFile(path.join(__dirname, "#"));
   });
 
   // loads 404 on any unconnect Url
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/404.html"));
+  });
+
+  app.get("/react-passport-example/server/static/index.html", function(
+    req,
+    res
+  ) {
+    res.sendFile(
+      path.join(__dirname, "../react-passport-example/server/static/index.html")
+    );
   });
 
   // Here we've add our isAuthenticated middleware to this route.
