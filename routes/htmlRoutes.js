@@ -37,7 +37,7 @@ module.exports = function(app) {
     res.sendFile(
       path.join(
         __dirname,
-        "..react-passport-example/client/src/components/HomePage.jsx"
+        "../react-passport-example/client/src/components/HomePage.jsx"
       )
     );
   });
